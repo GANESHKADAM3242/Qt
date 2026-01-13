@@ -11,6 +11,7 @@ qt_add_executable(loginPage
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    loginbutton.h loginbutton.cpp
 )
 
 target_link_libraries(loginPage
