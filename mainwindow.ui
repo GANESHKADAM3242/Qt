@@ -67,7 +67,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="userID_lineEdit">
        <property name="maximumSize">
         <size>
          <width>200</width>
@@ -124,7 +124,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="password_lineEdit">
        <property name="maxLength">
         <number>18</number>
        </property>
@@ -163,11 +163,24 @@
      <item>
       <widget class="QPushButton" name="login_pushButton">
        <property name="text">
-        <string>PushButton</string>
+        <string>LogIn</string>
        </property>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="signUp_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>370</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SignUp</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
