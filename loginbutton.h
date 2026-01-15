@@ -8,7 +8,8 @@ class loginbutton : public QWidget
     Q_OBJECT
 public:
     explicit loginbutton(QWidget *parent = nullptr);
-
+private:
+    loginbutton *ui;
 signals:
 };
 
