@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "loginbutton.h"
 #include "qdebug.h"
+#include "DatabaseManager.h"
+#include "signupapp.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -40,7 +42,14 @@ void MainWindow::on_login_pushButton_clicked()
 void MainWindow::on_signUp_pushButton_clicked()
 {
     // Here it will open new pop-up and load new info in database
-    connect(ui->signup_pushButton, &QPushButton::clicked,
-            this, &MainWindow::openSignupDialog);
+    // Create the window on the Stack, but use exec() to pause execution
+    signupApp signupWindow;
+
+    // exec() starts its own event loop and waits here until the dialog is closed
+    if (signupWindow.exec() == QDialog::Accepted) {
+        // Optional: Do something if they finished signing up successfully
+        // For example: ui->lineEditUser->setText("NewUser");
+    }
+
 }
 

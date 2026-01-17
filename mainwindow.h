@@ -16,7 +16,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+private slots:
+    void openSignupDialog();
 private slots:
     void on_login_pushButton_clicked();
 
