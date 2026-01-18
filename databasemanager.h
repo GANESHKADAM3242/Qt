@@ -9,6 +9,9 @@ class databasemanager
 
     public:
         databasemanager();
+
+        static databasemanager& instance();
+
         bool init();
         bool loginUser(const QString& username, const QString& password);
         bool registerUser(const QString& username, const QString& password, const QString& role);

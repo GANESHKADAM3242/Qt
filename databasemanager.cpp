@@ -11,6 +11,12 @@ databasemanager::databasemanager() {
     m_db = QSqlDatabase::addDatabase("QSQLITE");
 }
 
+databasemanager& databasemanager::instance()
+{
+    static databasemanager instance;
+    return instance;
+}
+
 QString databasemanager::hashPassword(const QString& plainText)
 {
     QByteArray hash = QCryptographicHash::hash(plainText.toUtf8(), QCryptographicHash::Sha256);

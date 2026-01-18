@@ -17,6 +17,9 @@ public:
 
 signals:
 
+private slots:
+    void on_submitNewUser_pushButton_clicked();
+
 private:
     Ui::signupApp *ui;
 

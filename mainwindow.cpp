@@ -2,8 +2,11 @@
 #include "ui_mainwindow.h"
 #include "loginbutton.h"
 #include "qdebug.h"
-#include "DatabaseManager.h"
+#include "databasemanager.h"
 #include "signupapp.h"
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -33,9 +36,20 @@ void MainWindow::on_login_pushButton_clicked()
     const QString password = ui->password_lineEdit->text();
 
     qDebug()<<"********************************************";
-    qDebug()<<"t\t[ Login Detials ]\n";
+    qDebug()<<"\t[ Login Detials ]\n";
     qDebug()<<"User Name:"<<userID;
     qDebug()<<"Password:"<<password;
+
+    bool isValid = databasemanager::instance().loginUser(userID, password);
+
+
+    if (isValid) {
+        QMessageBox::information(this, "Success", "Login Successful!");
+
+    } else {
+        QMessageBox::warning(this, "Failed", "Wrong User ID or Password");
+    }
+
 }
 
 
