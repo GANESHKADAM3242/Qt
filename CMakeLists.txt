@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(loginPage LANGUAGES CXX)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets Sql)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets Sql Multimedia MultimediaWidgets)
 
 qt_standard_project_setup()
 
@@ -15,6 +15,7 @@ qt_add_executable(loginPage
     databasemanager.h databasemanager.cpp
     signupapp.h signupapp.cpp
     signupapp.ui
+    mycamera.h mycamera.cpp mycamera.ui
 )
 
 target_link_libraries(loginPage
@@ -22,6 +23,8 @@ target_link_libraries(loginPage
         Qt::Core
         Qt::Widgets
         Qt6::Sql
+        Qt6::Multimedia
+        Qt6::MultimediaWidgets
 )
 
 include(GNUInstallDirs)
